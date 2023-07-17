@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$u9+frtp5q@+4e-s21+rsj%xpw8d$bga)))^l49^p)#1%9gepg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aniquetest.pythonanywhere.com']
+ALLOWED_HOSTS = ['aniquetest.pythonanywhere.com','localhost']
 
 
 # Application definition
@@ -38,7 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "app_authentication"
+    'django.contrib.humanize',
+    "app_authentication",
+    "post",
+    "comment",
+    "direct",
+    "stories",
+    "widget_tweaks",
+    "notification"
 ]
 
 MIDDLEWARE = [
@@ -107,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "Asia/Karachi"
 
 USE_I18N = True
 
@@ -120,6 +127,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'django_instagram_clone/static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR,'django_instagram_clone/static_root')
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
