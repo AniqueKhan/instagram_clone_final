@@ -2,8 +2,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render,redirect
 from django.urls import resolve , reverse
 from post.models import Follow, Post , Stream
-from .forms import EditProfileForm, SignupForm,ChangePasswordForm
-from .models import Profile
+from app_authentication.forms import EditProfileForm, SignupForm,ChangePasswordForm
+from app_authentication.models import Profile
 from django.db import transaction
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
