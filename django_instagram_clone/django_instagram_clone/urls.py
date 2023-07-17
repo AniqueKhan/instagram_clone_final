@@ -29,3 +29,5 @@ urlpatterns = [
     path('password_change',app_authentication.views.password_change,name='password_change'),
     path('password_change/done', app_authentication.views.password_change_done, name='password_change_done'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+handler404 = 'post.views.handler404'

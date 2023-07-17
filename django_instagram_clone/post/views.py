@@ -13,6 +13,10 @@ import datetime
 from stories.models import Story,StoryStream
 # Create your views here.
 
+def handler404(request, exception):
+    return render(request, 'post/404.html')
+
+
 @login_required
 def index(request):
     user = request.user

@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<div class="alert alert-primary mt-4" style="font-size: 18px" role="alert">
+  OOPS! This page does not exist.
+  <br />
+  <a href="{% url 'index' %}" class="btn btn-outline-success float-end mt-4"
+    >Go Back To The Home Page</a
+  >
+</div>
+
+{% endblock content %}

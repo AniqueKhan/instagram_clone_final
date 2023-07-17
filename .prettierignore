@@ -1,2 +1,3 @@
 django_instagram_clone/django_instagram_clone/templates/base.html
 django_instagram_clone/django_instagram_clone/templates/notification/notifications.html
+django_instagram_clone/django_instagram_clone/templates/post/index.html
