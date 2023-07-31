@@ -91,6 +91,12 @@
               </div>
             </div>
             <div class="d-flex justify-content-between align-items-center mb-4">
+          
+              
+              {% if profile.user == request.user %}
+                
+              
+                
               {% if url_name == 'profile' %}
               <p class="lead fw-normal mb-0">
                 <a
@@ -121,7 +127,7 @@
                   >Saved</a
                 >
               </p>
-              {% endif %}
+              {% endif %}{% endif %}
             </div>
             {% if posts.count == 0 %} {% if url_name == "profile" %}
             <div class="alert alert-primary" role="alert">
