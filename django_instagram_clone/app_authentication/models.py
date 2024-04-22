@@ -37,6 +37,7 @@ class Profile(models.Model):
 
         if self.picture:
             pic = Image.open(self.picture.path)
+            pic = pic.convert("RGB")
             pic.thumbnail(SIZE, Image.LANCZOS)
             pic.save(self.picture.path)
 

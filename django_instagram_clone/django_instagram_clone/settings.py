@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-ON_VPS=env("ON_VPS")=="false"
+ON_VPS=env("ON_VPS")=="true"
 
 SECRET_KEY = env("SECRET_KEY")
 
