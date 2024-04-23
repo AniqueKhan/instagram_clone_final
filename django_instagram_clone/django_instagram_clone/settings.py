@@ -15,7 +15,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = not ON_VPS
 
 if ON_VPS:
-    ALLOWED_HOSTS = ['184.94.215.214',"www.instagram_clone.pynabyte.com","instagram_clone.pynabyte.com"]
+    ALLOWED_HOSTS = ['184.94.215.214',"www.instagramclone.pynabyte.com","instagramclone.pynabyte.com"]
 else:
     ALLOWED_HOSTS = ['localhost']
 
