@@ -73,9 +73,6 @@ class ChangePasswordForm(forms.ModelForm):
 		return self.cleaned_data
 
 
-
-
-
 class EditProfileForm(forms.ModelForm):
 	picture = forms.ImageField(required=False)
 	first_name= forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),max_length=60,required=False)
