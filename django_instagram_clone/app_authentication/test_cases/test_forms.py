@@ -58,7 +58,6 @@ class SignupFormTestCase(TestCase):
         self.assertIn('email',form.errors)
         self.assertIn("User with this email already exists.",form.errors['email'])
 
-
 class CleanPasswordFormTestCase(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser',password="old_password")
