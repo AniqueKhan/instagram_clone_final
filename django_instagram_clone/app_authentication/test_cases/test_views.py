@@ -5,6 +5,7 @@ from app_authentication.forms import SignupForm,ChangePasswordForm
 from app_authentication.models import Profile
 from django.contrib.auth import authenticate
 from post.models import Post
+from django.urls.exceptions import Resolver404
 
 class SignupViewTestCase(TestCase):
     def setUp(self):

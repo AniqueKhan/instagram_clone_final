@@ -14,9 +14,6 @@ from django.conf import settings
 
 # Create your views here.
 
-
-
-
 def signup(request):
 	if request.method == 'POST':
 		form = SignupForm(request.POST)
