@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
+from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save, post_delete
 from notification.models import Notification
@@ -49,7 +50,11 @@ class Post(models.Model):
     
     def __str__(self):
         return f'Post User: {str(self.user).capitalize()} | Post Creation: {self.posted.strftime("%d %B, %Y at %I:%M:%S %p")}'
-
+    
+    def save(self,*args, **kwargs):
+        if not self.caption and not self.content.exists():
+            raise ValidationError("You must either provide caption or content for the post")
+        super(Post,self).save(*args, **kwargs)
 class Follow(models.Model):
     follower = models.ForeignKey(User,on_delete=models.CASCADE,related_name='follower')
     following = models.ForeignKey(User,on_delete=models.CASCADE,related_name='following')
