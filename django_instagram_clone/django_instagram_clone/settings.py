@@ -8,6 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 ON_VPS=env("ON_VPS")=="true"
+USE_SQL_ON_LOCAL=env("USE_SQL_ON_LOCAL")=="true"
 
 SECRET_KEY = env("SECRET_KEY")
 
@@ -97,6 +98,11 @@ else:
             'HOST': env("LOCAL_DB_HOST"),
             'PORT': '5432',
         }
+    } if not USE_SQL_ON_LOCAL else {"default":{
+
+        "ENGINE": "django.db.backends.sqlite3",
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
     }
 
 AUTH_PASSWORD_VALIDATORS = [
