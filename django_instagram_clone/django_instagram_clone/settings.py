@@ -141,8 +141,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT = "/home/pynabyte/static_root_directory/static_root_instagram_clone" if ON_VPS else ''
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL =  '/media/'
+MEDIA_ROOT = '/home/pynabyte/media_directory/media_directory_instagram_clone' if ON_VPS else os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'login'
