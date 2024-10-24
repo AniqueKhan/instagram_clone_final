@@ -22,4 +22,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_KEY }}
-          script: "cd code-repositories/instagram_clone_final/django_instagram_clone && ./.scripts/deploy.sh"
+          script: "cd /code-repositories/instagram_clone_final/django_instagram_clone && ./.scripts/deploy.sh"
