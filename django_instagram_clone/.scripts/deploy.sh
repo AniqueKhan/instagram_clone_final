@@ -30,5 +30,6 @@ echo "New changes copied to server !"
 
 # Reloading Application So New Changes could reflect on website
 sudo systemctl restart instagram_clone
+sudo systemctl restart nginx
 
 echo "Deployment Finished!"
