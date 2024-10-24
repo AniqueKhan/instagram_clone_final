@@ -29,8 +29,6 @@ echo "New changes copied to server !"
 # echo "Virtual env 'mb' Deactivated !"
 
 # Reloading Application So New Changes could reflect on website
-pushd miniblog
-touch wsgi.py
-popd
+sudo systemctl restart instagram_clone
 
 echo "Deployment Finished!"
