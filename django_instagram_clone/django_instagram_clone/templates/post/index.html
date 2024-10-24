@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 {% endblock stylesheet %} {% block content %} {% if post_items.count == 0 %}
 <div class="alert alert-primary mt-4" style="font-size: 18px" role="alert">
-  Hi , {{request.user.username|capfirst}}! You are currently not following any
+  Hi , {{request.user.username}}! You are currently not following any
   user. Go to the search bar and follow some users to have their content on your
   feed.
 </div>
@@ -12,7 +12,7 @@
 <!-- Stories -->
 {% if len_of_own_stories == 0 %} {% if len_of_stories == 0 %}
 <div class="alert alert-primary mt-4" style="font-size: 18px" role="alert">
-  Hi , <b>{{request.user.username|capfirst}}</b>! None of your following has
+  Hi , <b>{{request.user.username}}</b>! None of your following has
   posted any stories yet!
 </div>
 {% endif %} {% endif %}

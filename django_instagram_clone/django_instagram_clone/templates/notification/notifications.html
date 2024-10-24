@@ -2,7 +2,7 @@
 
 {% if notifications.count == 0 %}
 <div class="alert alert-primary mt-4" style="font-size: 18px" role="alert">
-  Hi , {{request.user.username|capfirst}}! You do not have any notifications currently.
+  Hi , {{request.user.username}}! You do not have any notifications currently.
 </div> {% else %}<div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
