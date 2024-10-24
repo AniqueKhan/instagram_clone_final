@@ -8,9 +8,7 @@ from django.db import transaction
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
-from django.core.mail import send_mail
-import uuid
-from django.conf import settings
+from django.contrib.auth import login
 
 # Create your views here.
 
@@ -21,7 +19,8 @@ def signup(request):
 			username = form.cleaned_data.get('username')
 			email = form.cleaned_data.get('email')
 			password = form.cleaned_data.get('password')
-			User.objects.create_user(username=username, email=email, password=password)
+			user = User.objects.create_user(username=username, email=email, password=password)
+			login(request,user)
 			return redirect('edit_profile')
 	else:
 		form = SignupForm()
