@@ -22,4 +22,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_KEY }}
-          script: "cd code-repositories/instagram_clone_final/django_instagram_clone && ./.scripts/deploy.sh"
+          script: |
+            set -x  # Enable verbose logging
+            cd code-repositories/instagram_clone_final/django_instagram_clone
+            git pull origin master
+            sudo systemctl restart instagram_clone
+          # script: "cd code-repositories/instagram_clone_final/django_instagram_clone && ./.scripts/deploy.sh"
