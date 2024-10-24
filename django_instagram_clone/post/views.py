@@ -68,6 +68,8 @@ def index(request):
         posts_ids.append(post.post_id)
     
     post_items = (Post.objects.filter(id__in=posts_ids) | Post.objects.filter(user=request.user)).all().order_by("-posted")
+    if not post_items:
+        post_items = Post.objects.all().order_by("-posted")
     
     len_of_post_items = len(post_items)
     len_of_own_stories = len(own_stories)
