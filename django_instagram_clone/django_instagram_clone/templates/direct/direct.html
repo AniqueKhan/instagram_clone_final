@@ -41,8 +41,8 @@
               {% endif %}
 
               <div class="flex-grow-1 ml-3">
-                {{message.user.username}} {% if active_direct ==
-                message.user.username %}
+                {{message.user.username}} 
+                {% if active_direct == message.user.username %}
                 <div class="small">
                   <span
                     class="fa-solid fa-circle"
@@ -92,8 +92,8 @@
 
           <div class="position-relative">
             <div class="chat-messages p-4">
-              {% for direct in directs %} {% if
-              direct.sender.profile.user.username != request.user.username%}
+              {% for direct in directs %} 
+              {% if direct.sender.profile.user.username != request.user.username%}
               <div class="chat-message-left pb-4">
                 <div>
                   {% if direct.sender.profile.picture %}
